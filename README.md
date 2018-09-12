@@ -40,3 +40,19 @@ Moving on to using the code that I wrote for the Java interface-
 In Java JFrame is used to make GUI which would be similar to any Hardware control module.
 There are 3 main external jar files that must be include in the libraries for the GUI to show no errors, these jar files are pre-created libraries to support robust Serial communication.
 These there jar files will be in my folder and make sure to import all there to the project. 
+ 
+
+To import these .jar files into the library, right click on the project tile and then go to Build Path -> Configure Build Path-> libraries -> Add External JARs-> browse the 3 jar files and import them.
+ 
+ 
+Once these 3 jar files are imported, the code is ready to be run.
+Just have the main.java open and click on the Green Play button to see the Java interface-
+
+ 
+For getting connected to the Comex 2000 via Bluetooth through the Bluetooth Module, go to Bluetooth Devices-> More Bluetooth Options -> Com Ports -> See the port having Outgoing SPP and chose that port from the drop down menu of the GUI. Once the Connect button becomes disconnected, make sure that Bluetooth Red Button turns on Green after that. 
+Once that is done clicking the power button should transfer data over the Bluetooth to the Comex2000. You can check whether data is being transferred over the Bluetooth either by the Logic analyzer or the on the Oscilloscope. It was well tested that data is being transferred, but one of the issues that I was having initially is the Bluetooth module in itself was not working fine every time, so we have ordered a supposedly more robust module, which hopefully should get things working well.
+The code is quite well documented and going through the code would help understand, why has each step been done the way it is. There is not much to debug as it’s the most basic form of serial communication, the outputs can also be checked via serial port of any Arduino or microcontroller by uploading the code which reads the receiver pin of the micro-controller. You may have the Bluetooth connect to an Arduino to another computer and the Bluetooth connected to the RX of the Arduino. Then chose the com port for the Bluetooth Outgoing SPP, and open the serial port of the Arduino. You may see data coming both in form of Decimal or even Hex values, if the serial.print is uncommented. You will see that the serial monitor will give- I received : 105 as the first line and so on.
+Also, make sure that the serial monitor has a baud rate of 115200 as that is what the Bluetooth module works on by default.
+The Arduino code to read serial ports is also added to my folder, this is just to make sure, the correct set up were made and the Bluetooth is working, along with correct data is being sent.
+Let me know if any part is not understood properly.
+ 
